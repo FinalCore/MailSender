@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MailSender" Height="450" Width="800">
     <Grid>
-
+    <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Создать"></MenuItem>
+                    <MenuItem Header="Открыть"></MenuItem>
+                    <MenuItem Header="Сохранить"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Помощь"></MenuItem>
+            </Menu>
+            <TabControl TabStripPlacement="Top">
+                <TabItem Header="Отправка"></TabItem>
+                <TabItem Header="Список адресатов"></TabItem>
+                <TabItem Header="Статистика"></TabItem>                
+            </TabControl>           
+    </DockPanel>
+        <Button x:Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Height="28" Width="116" Click="SendButton_Click"/>
+        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Margin="158,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+        <TextBlock HorizontalAlignment="Left" Margin="75,114,0,0" Text="User Name" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="75,155,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="pbPassword" HorizontalAlignment="Left" Margin="158,151,0,0" VerticalAlignment="Top" Width="156"/>
     </Grid>
+
 </Window>
