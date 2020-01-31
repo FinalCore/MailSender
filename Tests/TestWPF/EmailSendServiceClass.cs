@@ -10,32 +10,30 @@ namespace TestWPF
 {
     class EmailSendServiceClass
     {
-        string messageSubject = $"Тестовое сообщение от {DateTime.Now}";
-        string messageBody = $"Текст сообщения - {DateTime.Now}";
+        public string MessageSubject { get; set; }
+        public string MessageBody { get; set; }
+        public string To { get; set; }
 
         public readonly string from;
-        public readonly string to;
+        
         public EmailSendServiceClass()  
         {
-            from = "rimedheart@yandex.ru";
-            to = "rimedheart@yandex.ru";
+            from = "rimedheart@yandex.ru";            
         }
              
         public void SendMail(string userName, SecureString userPassword)
         {
             try
             {
-                using (var message = new MailMessage(this.from, this.to))
+                using (var message = new MailMessage(this.from, this.To))
                 {
-                    message.Subject = this.messageSubject;
-                    message.Body = this.messageBody;
+                    message.Subject = this.MessageSubject;
+                    message.Body = this.MessageBody;
 
 
                     using (var client = new SmtpClient(ServerData.serverAddress, ServerData.serverPort))
                     {
                         client.EnableSsl = true;
-
-
 
                         client.Credentials = new NetworkCredential(userName, userPassword);
 
@@ -46,9 +44,9 @@ namespace TestWPF
                           MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show(error.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }       
     }
