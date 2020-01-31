@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Net;
+using System.Net.Mail;
+using System.Security;
+
 
 namespace TestWPF
 {
@@ -23,6 +15,23 @@ namespace TestWPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            var userName = tbUserName.Text;
+            SecureString userPassword = pbPassword.SecurePassword;
+            EmailSendServiceClass emailSend = new EmailSendServiceClass();
+            emailSend.MessageSubject = tbMailTopic.Text;
+            emailSend.MessageSubject = tbMailText.Text;
+            emailSend.To = tbUserName.Text;
+
+            emailSend.SendMail(userName, userPassword);
+        }
+
+        private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
