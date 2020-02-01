@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:TestWPF"
         mc:Ignorable="d"
         Title="MailSender" Height="450" Width="800">
-    <Grid>
+    
         <DockPanel>
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="Файл">
+                <MenuItem Header="Файл" HorizontalAlignment="Left">
                     <MenuItem Header="Создать"></MenuItem>
                     <MenuItem Header="Открыть"></MenuItem>
                     <MenuItem Header="Сохранить"></MenuItem>
@@ -17,22 +17,35 @@
                 <MenuItem Header="Помощь"></MenuItem>
             </Menu>
             <TabControl TabStripPlacement="Top" SelectionChanged="TabControl_SelectionChanged">
-                <TabItem Header="Отправка"></TabItem>
+                <TabItem Header="Отправка">
+                     <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                        <Button x:Name="SendButton" Grid.Column ="1" Grid.Row="2" Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30,5" Click="SendButton_Click"/>
+                        <TextBox x:Name="tbUserName" Grid.Column ="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,10,0"/>
+                        <TextBox x:Name="tbMailTopic" Grid.Column ="3" Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,0,10,0"></TextBox>
+                        <TextBox x:Name="tbMailText" Grid.Column ="3" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,35,10,10"/>
+                        <PasswordBox x:Name="pbPassword" Grid.Column ="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBlock HorizontalAlignment="Left" Text="Имя пользователя"  Grid.Column ="0" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" Margin="40,0,0,0" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Left" Text="Пароль"  Grid.Column ="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Margin="40,0,0,0" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Left" Text="Тема письма" Grid.Column ="2" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" Padding="40,0,20,0" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Left" Text="Текст сообщения" Grid.Column ="2" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Padding="40,0,20,0" Foreground="White"/>
+                    </Grid>                     
+
+            </TabItem>
                 <TabItem Header="Список адресатов"></TabItem>
                 <TabItem Header="Статистика"></TabItem>
             </TabControl>
         </DockPanel>
-
-        <Button x:Name="SendButton" Grid.Column ="0" Grid.Row="1" Content="Send" HorizontalAlignment="Left" Margin="162,235,0,0" VerticalAlignment="Top" Height="28" Width="116" Click="SendButton_Click"/>
-        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Margin="158,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,114,0,0" Text="Имя пользователя"  TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,151,0,0" Text="Пароль" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"/>
-        <PasswordBox x:Name="pbPassword" HorizontalAlignment="Left" Margin="158,151,0,0" VerticalAlignment="Top" Width="156"/>
-        <TextBox x:Name="tbMailTopic" HorizontalAlignment="Right" Margin="0,111,40,0" VerticalAlignment="Top" Width="300"></TextBox>
-        <TextBlock HorizontalAlignment="Left" Margin="347,114,0,0" Text="Тема письма"  TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="tbMailText" HorizontalAlignment="Right" Margin="0,151,40,0" VerticalAlignment="Top" Width="300" Height="170"/>
-        <TextBlock HorizontalAlignment="Left" Margin="347,154,0,0" Text="Текст сообщения"  TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"/>
-
-    </Grid>
-
 </Window>
