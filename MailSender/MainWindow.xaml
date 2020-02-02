@@ -20,10 +20,10 @@
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock Text="Приложение работает..."></TextBlock>
         </StatusBar>
-        <TabControl>
+        <TabControl DockPanel.Dock="Top">
             <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
                 <DockPanel>
-                    <ToolBarTray>
+                    <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Header="Отправители">
                             <ComboBox Width="180"></ComboBox>
                             <Button>
@@ -48,8 +48,8 @@
                                 <Image Height="14" Source="Images\Delete_color.png"></Image>
                             </Button>
                         </ToolBar>
-                        <ToolBar Header="Получатели" Band="2">
-                            <Button>
+                        <ToolBar Header="Получатели" Band="0" Margin="10,0,0,0">
+                            <Button Margin="31,0,0,0">
                                 <Image Height ="14" Source="Images\Add_color.png"></Image>
                             </Button>
                             <Button>
@@ -59,18 +59,49 @@
                                 <Image Height="14" Source="Images\Delete_color.png"></Image>
                             </Button>
                         </ToolBar>
-                        <ToolBar Header ="Перейти в планировщик" Band="3">
+                        <ToolBar Header ="Перейти в планировщик" Band="1" Margin="10,0,0,0">
                             <Button>
                                 <Image Height="14" Source="Images\Calendar_color.png"></Image>
                             </Button>                         
                         </ToolBar>
                     </ToolBarTray>
+                    <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Width="40"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Имя" Width="200"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Адрес" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Планировщик" ToolTip="Планирование времени рассылки"></TabItem>
+            <TabItem Header="Планировщик" ToolTip="Планирование времени рассылки">
+                <DockPanel>
+                    <GroupBox Header="Задачи" DockPanel.Dock="Left" Width="500"></GroupBox>
+                    <GroupBox Header="Расписание" DockPanel.Dock="Left">
+                        <StackPanel>
+                            <Calendar></Calendar>
+                            <StackPanel Margin="50,0,50,0">
+                                <Button>
+                                    <DockPanel>
+                                        <TextBlock Text="Запланировать" HorizontalAlignment="Left"></TextBlock>
+                                        <Image Height="14" Source="Images\Add_color.png" Margin="10,0,0,0"></Image>
+                                    </DockPanel>
+                                </Button>
+                                <Button>
+                                    <DockPanel>
+                                        <TextBlock Text="Отправить" HorizontalAlignment="Left"></TextBlock>
+                                        <Image Height="14" Source="Images\Send_color.png" Margin="10,0,0,0"></Image>
+                                    </DockPanel>
+                                </Button>
+                            </StackPanel>                            
+                        </StackPanel>
+                    </GroupBox>
+                </DockPanel>
+            </TabItem>
             <TabItem Header="Письма"></TabItem>
-            <TabItem Header="Статистика"></TabItem>
-        </TabControl>
-        
+            <TabItem Header="Статистика"></TabItem>           
+        </TabControl>         
     </DockPanel>
 </Window>
