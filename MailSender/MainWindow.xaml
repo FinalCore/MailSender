@@ -6,7 +6,53 @@
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл" Click="MenuItem_Click">
+                <MenuItem Header="Создать"></MenuItem>
+                <MenuItem Header="Открыть"></MenuItem>
+                <MenuItem Header="Сохранить"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Выход"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Помощь"></MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock Text="Приложение работает..."></TextBlock>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
+                <DockPanel>
+                    <ToolBarTray>
+                        <ToolBar Header="Отправители">
+                            <ComboBox Width="180"></ComboBox>
+                            <Button Content="Добавить"></Button>
+                            <Button Content="Редактировать"></Button>
+                            <Button Content="Удалить"></Button>
+                        </ToolBar>
+                        <ToolBar Header="Сервера" Band="1">
+                            <ComboBox Width="180" Margin="27,0,0,0"></ComboBox>
+                            <Button Content="Добавить"></Button>
+                            <Button Content="Редактировать"></Button>
+                            <Button Content="Удалить"></Button>
+                        </ToolBar>
+                        <ToolBar Header="Получатели" Band="2">                            
+                            <Button Content="Добавить"></Button>
+                            <Button Content="Редактировать"></Button>
+                            <Button Content="Удалить"></Button>
+                        </ToolBar>
+                        <ToolBar Header="Планировщик" Band="3">
+                            <Button Content="Добавить"></Button>
+                            <Button Content="Редактировать"></Button>
+                            <Button Content="Удалить"></Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Планировщик" ToolTip="Планирование времени рассылки"></TabItem>
+            <TabItem Header="Письма"></TabItem>
+            <TabItem Header="Статистика"></TabItem>
+        </TabControl>
+        
+    </DockPanel>
 </Window>
