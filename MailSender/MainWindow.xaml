@@ -26,25 +26,43 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
                             <ComboBox Width="180"></ComboBox>
-                            <Button Content="Добавить"></Button>
-                            <Button Content="Редактировать"></Button>
-                            <Button Content="Удалить"></Button>
+                            <Button>
+                                <Image Height ="14" Source="Images\Add_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Edit_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Delete_color.png"></Image>
+                            </Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
                             <ComboBox Width="180" Margin="27,0,0,0"></ComboBox>
-                            <Button Content="Добавить"></Button>
-                            <Button Content="Редактировать"></Button>
-                            <Button Content="Удалить"></Button>
+                            <Button>
+                                <Image Height ="14" Source="Images\Add_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Edit_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Delete_color.png"></Image>
+                            </Button>
                         </ToolBar>
-                        <ToolBar Header="Получатели" Band="2">                            
-                            <Button Content="Добавить"></Button>
-                            <Button Content="Редактировать"></Button>
-                            <Button Content="Удалить"></Button>
+                        <ToolBar Header="Получатели" Band="2">
+                            <Button>
+                                <Image Height ="14" Source="Images\Add_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Edit_color.png"></Image>
+                            </Button>
+                            <Button>
+                                <Image Height="14" Source="Images\Delete_color.png"></Image>
+                            </Button>
                         </ToolBar>
-                        <ToolBar Header="Планировщик" Band="3">
-                            <Button Content="Добавить"></Button>
-                            <Button Content="Редактировать"></Button>
-                            <Button Content="Удалить"></Button>
+                        <ToolBar Header ="Перейти в планировщик" Band="3">
+                            <Button>
+                                <Image Height="14" Source="Images\Calendar_color.png"></Image>
+                            </Button>                         
                         </ToolBar>
                     </ToolBarTray>
                 </DockPanel>
