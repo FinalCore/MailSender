@@ -78,7 +78,20 @@
             </TabItem>
             <TabItem Header="Планировщик" ToolTip="Планирование времени рассылки">
                 <DockPanel>
-                    <GroupBox Header="Задачи" DockPanel.Dock="Left" Width="500"></GroupBox>
+                    <GroupBox Header="Задачи" DockPanel.Dock="Left" Width="500">
+                        <ListBox>
+                            <ListBoxItem HorizontalContentAlignment="Stretch">
+                                <GroupBox Header="Задача1" >
+                                    <StackPanel>
+                                        <TextBlock Text="Время"></TextBlock>
+                                        <TextBlock Text="Сервер" ></TextBlock>
+                                        <TextBlock Text="Отправитель" ></TextBlock>
+                                        <TextBlock Text="Список получателей" ></TextBlock>
+                                    </StackPanel>
+                                </GroupBox>
+                            </ListBoxItem>
+                        </ListBox>
+                    </GroupBox>
                     <GroupBox Header="Расписание" DockPanel.Dock="Left">
                         <StackPanel>
                             <Calendar></Calendar>
@@ -100,7 +113,46 @@
                     </GroupBox>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Письма"></TabItem>
+            <TabItem Header="Письма">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="200" MaxWidth="400"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Спискок писем">
+                        <DockPanel>
+                            <UniformGrid DockPanel.Dock="Bottom" Rows="1" Height="33">
+                                <Button Content="Добавить"></Button>
+                                <Button Content="Удалить"></Button>
+                            </UniformGrid>
+                            <ListBox DockPanel.Dock="Top">
+                                <ListBoxItem>Письмо 1</ListBoxItem>
+                                <ListBoxItem>Письмо 2</ListBoxItem>
+                                <ListBoxItem>Письмо 3</ListBoxItem>
+                            </ListBox>                          
+                        </DockPanel>
+                    </GroupBox>
+                    <GroupBox Header="Выбранное письмо" Grid.Column="1">
+                        <DockPanel>
+                            <GroupBox Header="Тема письма" DockPanel.Dock="Top">
+                                <TextBlock Text=" "></TextBlock>
+                            </GroupBox>
+                            <GroupBox Header="Тело письма" DockPanel.Dock="Top">
+                                <TextBlock Text=" "></TextBlock>
+                            </GroupBox>
+                            <GroupBox Header="Вложения" DockPanel.Dock="Top">
+                                <ListView Padding="80"></ListView>                                
+                            </GroupBox>
+                            <Button HorizontalAlignment ="Left" VerticalAlignment="Bottom" Padding="2">
+                                <WrapPanel>
+                                    <Label Content="Добавить вложение"></Label>
+                                    <Image Height="14" Source="Images\Attach.png"></Image>
+                                </WrapPanel>
+                            </Button>
+                        </DockPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
             <TabItem Header="Статистика"></TabItem>           
         </TabControl>         
     </DockPanel>
