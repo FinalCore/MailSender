@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MailSender.lib\MailSender.lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\Add_color.png" />
     <Resource Include="Images\Attach.png" />
     <Resource Include="Images\Calendar_color.png" />
