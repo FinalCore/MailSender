@@ -17,5 +17,10 @@ namespace MailSender.lib.Entities
             Name = name;
             Address = address;
         }
+
+        public override string ToString()
+        {
+            return $"{this.Name}   {this.Address}";
+        }
     }
 }

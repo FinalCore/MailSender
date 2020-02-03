@@ -10,8 +10,8 @@ namespace MailSender.lib.Data
         public static List<Server> Servers { get; } = new List<Server>
         {
             new Server("Яндекс", "smtp.yandex.ru", 587, "UserLogin", "Password"),
-            new Server("Яндекс", "smtp.mail.ru", 587, "UserLogin", "Password"),
-            new Server("Яндекс", "smtp.gmail.com", 587, "UserLogin", "Password")
+            new Server("Mail", "smtp.mail.ru", 587, "UserLogin", "Password"),
+            new Server("Google", "smtp.gmail.com", 587, "UserLogin", "Password")
         };
 
         public static List<Sender> Senders { get; } = new List<Sender>
