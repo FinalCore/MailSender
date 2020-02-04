@@ -10,7 +10,7 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Файл" Click="MenuItem_Click">
+            <MenuItem Header="Файл">
                 <MenuItem Header="Создать"></MenuItem>
                 <MenuItem Header="Открыть"></MenuItem>
                 <MenuItem Header="Сохранить"></MenuItem>
@@ -27,7 +27,7 @@
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Header="Отправители">
-                            <ComboBox Name ="SendersList" Width="180"
+                            <ComboBox Name ="sendersList" Width="180"
                                 ItemsSource="{x:Static data:TestData.Senders}"></ComboBox>
                             <Button>
                                 <Image Height ="14" Source="Images\Add_color.png"></Image>
@@ -37,7 +37,7 @@
                             </Button>
                             <Button>
                                 <Image Height="14" Source="Images\Delete_color.png"></Image>
-                            </Button>
+                            </Button>                           
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
                             <ComboBox Name="serversList" Width="180" Margin="27,0,0,0"
@@ -68,13 +68,16 @@
                                 <Image Height="14" Source="Images\Calendar_color.png"></Image>
                             </Button>                         
                         </ToolBar>
+                        <ToolBar BandIndex="2">
+                            <CheckBox x:Name="editSend" Height="20" Width="19" IsThreeState="False" Checked="editSend_Checked"></CheckBox>
+                        </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
-                        <DataGrid>
+                        <DataGrid Name="recepientsList" ItemsSource="{x:Static data:TestData.Recepients}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Width="40"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Имя" Width="200"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Адрес" Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="ID" Width="40" ></DataGridTextColumn>
+                                <DataGridTextColumn Header="Имя" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
@@ -106,7 +109,7 @@
                                         <Image Height="14" Source="Images\Add_color.png" Margin="10,0,0,0"></Image>
                                     </DockPanel>
                                 </Button>
-                                <Button>
+                                <Button Click="OnSendButtonClick">
                                     <DockPanel>
                                         <TextBlock Text="Отправить" HorizontalAlignment="Left"></TextBlock>
                                         <Image Height="14" Source="Images\Send_color.png" Margin="10,0,0,0"></Image>
@@ -139,10 +142,10 @@
                     <GroupBox Header="Выбранное письмо" Grid.Column="1">
                         <DockPanel>
                             <GroupBox Header="Тема письма" DockPanel.Dock="Top">
-                                <TextBlock Text=" "></TextBlock>
+                                <TextBlock x:Name="mailTopic" Text=" "></TextBlock>
                             </GroupBox>
                             <GroupBox Header="Тело письма" DockPanel.Dock="Top">
-                                <TextBlock Text=" "></TextBlock>
+                                <TextBlock x:Name="mailText" Text=" "></TextBlock>
                             </GroupBox>
                             <GroupBox Header="Вложения" DockPanel.Dock="Top">
                                 <ListView Padding="80"></ListView>                                

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MailSender.lib.Entities;
+using MailSender.lib.Services;
 
 namespace MailSender
 {
@@ -20,14 +22,38 @@ namespace MailSender
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OnSendButtonClick(object Sender, RoutedEventArgs e)
         {
+            var recepient = recepientsList.SelectedItem as Recepient;
+            var sender = sendersList.SelectedItem as Sender;
+            var server = serversList.SelectedItem as Server;
 
+            if (editSend.IsChecked == false)
+            {
+                var mailSender = new lib.Services.MailSender(server.Address, server.Port, server.UseSSL, server.Login, server.Password);
+
+                mailSender.Send(mailTopic.Text, mailText.Text, sender.Address, recepient.Address);
+            }
+            else
+            {
+                SenderEditor senderEditor = new SenderEditor();
+                senderEditor.Show();
+                var mailSender = new lib.Services.MailSender("smtp.yandex.ru", 25, true, senderEditor.editSenderName.Text, senderEditor.editSenderName.Text);
+
+                mailSender.Send(mailTopic.Text, mailText.Text, "rimedheart@yandex.ru", "rimedheart@yandex.ru");
+            }
+
+            
+        }
+
+        private void editSend_Checked(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -20,5 +20,12 @@ namespace MailSender.lib.Data
             new Sender("Петросян", "e.petrosyan@gamil.com"),
             new Sender("Хабибулин", "a.habibulin@yandex.ru")
         };
+        
+        public static List<Recepient> Recepients { get; } = new List<Recepient>
+        {
+            new Recepient("Васильев", "ee-vasya@mail.ru"),
+            new Recepient("Смирнов", "smirnoff@gamil.com"),
+            new Recepient("Бобров", "biber@yandex.ru")
+        };
     }
 }
