@@ -6,4 +6,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\Add_color.png" />
+    <None Remove="Images\Attach.png" />
+    <None Remove="Images\Calendar_color.png" />
+    <None Remove="Images\Delete_color.png" />
+    <None Remove="Images\Edit_color.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MailSender.lib\MailSender.lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Add_color.png" />
+    <Resource Include="Images\Attach.png" />
+    <Resource Include="Images\Calendar_color.png" />
+    <Resource Include="Images\Delete_color.png" />
+    <Resource Include="Images\Edit_color.png" />
+  </ItemGroup>
+
 </Project>
