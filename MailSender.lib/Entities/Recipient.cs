@@ -4,12 +4,12 @@ using System.Text;
 
 namespace MailSender.lib.Entities
 {
-    public class Recepient
+    public class Recipient
     {
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public Recepient(string name, string address)
+        public Recipient(string name, string address)
         {
             Name = name;
             Address = address;

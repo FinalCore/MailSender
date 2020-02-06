@@ -29,7 +29,7 @@ namespace MailSender
 
         private void OnSendButtonClick(object Sender, RoutedEventArgs e)
         {
-            var recepient = recepientsList.SelectedItem as Recepient;
+            var recepient = recepientsList.SelectedItem as Recipient;
             var sender = sendersList.SelectedItem as Sender;
             var server = serversList.SelectedItem as Server;
 
