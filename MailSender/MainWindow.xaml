@@ -6,6 +6,7 @@
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib" 
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:view="clr-namespace:MailSender.Views"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
@@ -74,14 +75,15 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
-                        <DataGrid Name="recepientsList" ItemsSource="{Binding Recipients}"
-                                  AutoGenerateColumns="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Width="40" ></DataGridTextColumn>
-                                <DataGridTextColumn Header="Имя" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"></DataGridTextColumn>
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <view:RecipientsView Grid.Column="0" Margin="4"></view:RecipientsView>
+                            <view:RecipientEditor Grid.Column="1" Margin="10" VerticalAlignment="Top"></view:RecipientEditor>
+                            
+                        </Grid>
                     </GroupBox>
                 </DockPanel>
             </TabItem>
