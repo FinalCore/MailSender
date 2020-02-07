@@ -9,23 +9,23 @@ namespace MailSender.lib.Data
     {
         public static List<Server> Servers { get; } = new List<Server>
         {
-            new Server("Яндекс", "smtp.yandex.ru", 587, "UserLogin", "Password"),
-            new Server("Mail", "smtp.mail.ru", 587, "UserLogin", "Password"),
-            new Server("Google", "smtp.gmail.com", 587, "UserLogin", "Password")
+            new Server(0, "Яндекс", "smtp.yandex.ru", 587, "UserLogin", "Password"),
+            new Server(1, "Mail", "smtp.mail.ru", 587, "UserLogin", "Password"),
+            new Server(2, "Google", "smtp.gmail.com", 587, "UserLogin", "Password")
         };
 
         public static List<Sender> Senders { get; } = new List<Sender>
         {
-            new Sender("Пупкин", "v.pupkin@mail.ru"),
-            new Sender("Петросян", "e.petrosyan@gamil.com"),
-            new Sender("Хабибулин", "a.habibulin@yandex.ru")
+            new Sender(0, "Пупкин", "v.pupkin@mail.ru"),
+            new Sender(1, "Петросян", "e.petrosyan@gamil.com"),
+            new Sender(2, "Хабибулин", "a.habibulin@yandex.ru")
         };
         
         public static List<Recipient> Recipients { get; } = new List<Recipient>
         {
-            new Recipient("Васильев", "ee-vasya@mail.ru"),
-            new Recipient("Смирнов", "smirnoff@gamil.com"),
-            new Recipient("Бобров", "biber@yandex.ru")
+            new Recipient(0, "Васильев", "ee-vasya@mail.ru"),
+            new Recipient(1, "Смирнов", "smirnoff@gamil.com"),
+            new Recipient(2, "Бобров", "biber@yandex.ru")
         };
     }
 }

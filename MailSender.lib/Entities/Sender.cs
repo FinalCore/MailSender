@@ -9,11 +9,13 @@ namespace MailSender.lib.Entities
     /// </summary>
     public class Sender
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public Sender(string name, string address)
+        public Sender(int id, string name, string address)
         {
+            ID = id;
             Name = name;
             Address = address;
         }

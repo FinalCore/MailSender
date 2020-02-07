@@ -12,7 +12,13 @@ namespace MailSender.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         private string title = "Приложение для рассылки почты";
-        private readonly RecipientsManager recipientsManager; 
+        private readonly RecipientsManager recipientsManager;
+        private Recipient selectedRecipient;    
+        public Recipient SelectedRecipient
+        {
+            get => selectedRecipient;
+            set => Set(ref selectedRecipient, value);
+        }
 
         public string Title
         {
