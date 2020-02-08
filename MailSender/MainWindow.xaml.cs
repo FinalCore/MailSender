@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using MailSender.lib.Entities;
 using MailSender.lib.Services;
 
@@ -25,6 +26,7 @@ namespace MailSender
         public MainWindow() 
         {
             InitializeComponent();
+            
         }
 
         private void OnSendButtonClick(object Sender, RoutedEventArgs e)

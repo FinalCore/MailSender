@@ -6,6 +6,8 @@ using GalaSoft.MvvmLight;
 using MailSender.lib.Services;
 using MailSender.lib.Entities;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 
 namespace MailSender.ViewModels
 {
@@ -32,13 +34,25 @@ namespace MailSender.ViewModels
         { 
             get => recipients;
             set => Set(ref recipients, value);
-        } 
+        }
+
+        #region Команды
+        public ICommand LoadRecipientsDataCommand { get; }
+        #endregion
 
         public MainWindowViewModel(RecipientsManager recipientsManager)
         {
+            LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientsDataCommandExecuted, CanLoadRecipientsDataCommandExecute);
             this.recipientsManager = recipientsManager;
             Recipients = new ObservableCollection<Recipient>(recipientsManager.GetAll());
         }
+
+        private bool CanLoadRecipientsDataCommandExecute() => true;
+        private void OnLoadRecipientsDataCommandExecuted()
+        {
+            Recipients = new ObservableCollection<Recipient>(recipientsManager.GetAll());
+        }
+
 
     }
 }
