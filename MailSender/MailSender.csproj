@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.5" />
+    <PackageReference Include="MvvmLight" Version="5.4.1.1" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MailSender.lib\MailSender.lib.csproj" />
   </ItemGroup>
 
@@ -24,6 +30,10 @@
     <Resource Include="Images\Calendar_color.png" />
     <Resource Include="Images\Delete_color.png" />
     <Resource Include="Images\Edit_color.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
