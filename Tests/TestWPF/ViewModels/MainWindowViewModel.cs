@@ -7,12 +7,19 @@ namespace TestWPF.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
-        private string title = "Новое окно!";
+        private string title = "Новое окно...";
+        private int rotationAngle = 40;
 
-        public string Title2
+        public string Title
         {
             get => title;
-            set => Set(ref title, value, Title2);
+            set => Set(ref title, value, Title);
+        }
+
+        public int RotationAngle
+        {
+            get => rotationAngle;
+            set => Set(ref rotationAngle, value, "RotationAngle");
         }
             
             
