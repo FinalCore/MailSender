@@ -17,10 +17,17 @@ namespace MailSender.lib.Services
         {
             return store.Get();
         }
-            
+
         public void Add(Recipient newRecipient)
         {
 
         }
+
+        public void Edit(Recipient recipient)
+        {
+            store.Edit(recipient.ID, recipient);
+        }
+
+        public void SaveChanges() { }
     }
 }

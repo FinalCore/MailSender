@@ -7,7 +7,8 @@ using MailSender.lib.Services;
 using MailSender.lib.Entities;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
+//using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 
 namespace MailSender.ViewModels
 {
@@ -39,10 +40,12 @@ namespace MailSender.ViewModels
         #region Команды
         public ICommand LoadRecipientsDataCommand { get; }
         #endregion
+        public ICommand SaveRecipientChangesCommand { get; }
 
         public MainWindowViewModel(RecipientsManager recipientsManager)
         {
             LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientsDataCommandExecuted, CanLoadRecipientsDataCommandExecute);
+            SaveRecipientChangesCommand = new RelayCommand<Recipient>(OnSavedRecipientChangesCommandExecuted, CanSaveRecipientsChangesCommandExecute);
             this.recipientsManager = recipientsManager;
             Recipients = new ObservableCollection<Recipient>(recipientsManager.GetAll());
         }
@@ -51,6 +54,13 @@ namespace MailSender.ViewModels
         private void OnLoadRecipientsDataCommandExecuted()
         {
             Recipients = new ObservableCollection<Recipient>(recipientsManager.GetAll());
+        }
+
+        private bool CanSaveRecipientsChangesCommandExecute(Recipient recipient) => recipient != null;
+        private void OnSavedRecipientChangesCommandExecuted(Recipient recipient) 
+        {
+            recipientsManager.Edit(recipient);
+            recipientsManager.SaveChanges();
         }
 
 
