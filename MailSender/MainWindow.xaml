@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib" 
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
+        xmlns:view="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800"
@@ -75,13 +76,13 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
-                        <DataGrid Name="recepientsList" ItemsSource="{Binding Recipients}" AutoGenerateColumns="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Width="40" ></DataGridTextColumn>
-                                <DataGridTextColumn Header="Имя" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"></DataGridTextColumn>
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <view:RecipientsView Grid.Column="0"/>
+                        </Grid>
                     </GroupBox>
                 </DockPanel>
             </TabItem>
@@ -111,12 +112,12 @@
                                         <Image Height="14" Source="Images\Add_color.png" Margin="10,0,0,0"></Image>
                                     </DockPanel>
                                 </Button>
-                                <Button Click="OnSendButtonClick">
+                                <!--<Button Click="OnSendButtonClick">
                                     <DockPanel>
                                         <TextBlock Text="Отправить" HorizontalAlignment="Left"></TextBlock>
                                         <Image Height="14" Source="Images\Send_color.png" Margin="10,0,0,0"></Image>
                                     </DockPanel>
-                                </Button>
+                                </Button>-->
                             </StackPanel>                            
                         </StackPanel>
                     </GroupBox>
