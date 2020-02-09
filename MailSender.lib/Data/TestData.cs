@@ -21,11 +21,11 @@ namespace MailSender.lib.Data
             new Sender("Хабибулин", "a.habibulin@yandex.ru")
         };
         
-        public static List<Recepient> Recepients { get; } = new List<Recepient>
+        public static List<Recipient> Recepients { get; } = new List<Recipient>
         {
-            new Recepient("Васильев", "ee-vasya@mail.ru"),
-            new Recepient("Смирнов", "smirnoff@gamil.com"),
-            new Recepient("Бобров", "biber@yandex.ru")
+            new Recipient("Васильев", "ee-vasya@mail.ru"),
+            new Recipient("Смирнов", "smirnoff@gamil.com"),
+            new Recipient("Бобров", "biber@yandex.ru")
         };
     }
 }

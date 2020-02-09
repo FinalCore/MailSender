@@ -7,7 +7,9 @@
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Title}" Height="450" Width="800"
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -73,7 +75,7 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
-                        <DataGrid Name="recepientsList" ItemsSource="{x:Static data:TestData.Recepients}" AutoGenerateColumns="False">
+                        <DataGrid Name="recepientsList" ItemsSource="{Binding Recipients}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ID" Width="40" ></DataGridTextColumn>
                                 <DataGridTextColumn Header="Имя" Width="200" Binding="{Binding Name}"></DataGridTextColumn>
