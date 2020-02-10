@@ -35,6 +35,7 @@ namespace MailSender.lib.Services
 
         }
 
+        public void SaveChanges() { }
 
     }
 }
