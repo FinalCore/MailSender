@@ -82,6 +82,7 @@
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <view:RecipientsView Grid.Column="0"/>
+                            <view:RecipientEditor Grid.Column="1" Margin="5,0,0,135"/>
                         </Grid>
                     </GroupBox>
                 </DockPanel>

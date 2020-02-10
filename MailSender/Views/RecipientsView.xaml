@@ -14,7 +14,7 @@
             <TextBox></TextBox>
         </DockPanel>
         <Button Content="Обновить" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="15" Margin="20, 7"></Button>
-        <DataGrid x:Name="RecipientsList" ItemsSource="{Binding MainWindowModel, Source={StaticResource Locator}}" AutoGenerateColumns="False"
+        <DataGrid x:Name="RecipientsList" ItemsSource="{Binding Recipients}" AutoGenerateColumns="False"
                   SelectedItem="{Binding SelectedRecipient}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding ID}"></DataGridTextColumn>

@@ -33,6 +33,13 @@ namespace MailSender.ViewModels
             get => recipients;
             set => Set(ref recipients, value, "Recipients");
         }
+
+        private Recipient selectedRecipient;
+        public Recipient SelectedRecipient
+        {
+            get => selectedRecipient;
+            set => Set(ref selectedRecipient, value, "SelectedRecipient");
+        }
         
         // Определяем конструкторы класса
         //public MainWindowViewModel() { }
