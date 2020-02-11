@@ -4,6 +4,7 @@ using System.Text;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 using MailSender.lib.Services;
+using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.ViewModels
 {
@@ -14,8 +15,8 @@ namespace MailSender.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             //Регистрируем все созданные модели и классы, отвечающие за бизнес-логику в контейнере сервисов через ViewModelLocator
             SimpleIoc.Default.Register<MainWindowViewModel>();
-            SimpleIoc.Default.Register<RecipientsManager>();
-            SimpleIoc.Default.Register<RecipientsStoreInMemory>();
+            SimpleIoc.Default.Register<IRecipientsManager, RecipientsManager>();
+            SimpleIoc.Default.Register<IRecipientsStore, RecipientsStoreInMemory>();
         }
 
         //не понял, за что отвечает данное свойство

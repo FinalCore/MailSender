@@ -9,11 +9,13 @@ using MailSender.lib.Services;
 using MailSender.lib.Entities;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
+using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+       
         //Тест работы модели представления на примере названия окна
 
         private string title = "Приложение для рассылки почты";
@@ -24,7 +26,7 @@ namespace MailSender.ViewModels
         }
 
         #region// Подключаем калссы, отвечающие за бизнес-логику приложения к модели представления главного окна (MainWindowViewModel)
-        private readonly RecipientsManager recipientsManager;
+        private readonly IRecipientsManager recipientsManager;
         #endregion
         //public RecipientsManager RecipientsManager;
 
@@ -56,7 +58,7 @@ namespace MailSender.ViewModels
         /// Конструктор, с заполением поля recipients путем создания новой ObservableCollection и вызова метода GetAll для заполнения этой коллекции всеми имеющимися получателями
         /// </summary>
         /// <param name="recipientsManager"></param>
-        public MainWindowViewModel(RecipientsManager recipientsManager)
+        public MainWindowViewModel(IRecipientsManager recipientsManager)
         {
             LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientsDataCommandExecuted, CanLoadRecipientsDataCommandExecute);
             SaveRecipientChangesCommand = new RelayCommand<Recipient>(OnSavedRecipientChangesCommandExecuted, CanSaveRecipientsChangesCommandExecute);

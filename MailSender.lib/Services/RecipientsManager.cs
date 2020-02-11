@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using MailSender.lib.Entities;
+using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
 {
     //Класс, отвечающий за обработку данных, касающихся получателей писем
-   public class RecipientsManager
+   public class RecipientsManager : IRecipientsManager
     {
-        private RecipientsStoreInMemory recipientsStore;
+        private IRecipientsStore recipientsStore;
         //Конcтруктор, с указанием места хранения данных для класса RecipientManager
-        public RecipientsManager(RecipientsStoreInMemory recipientsStore)
+        public RecipientsManager(IRecipientsStore recipientsStore)
         {
             this.recipientsStore = recipientsStore;
         }
