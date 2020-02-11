@@ -27,6 +27,7 @@ namespace MailSender
             InitializeComponent();
         }
 
+ MVVM_pattern_self-studying
         //private void OnSendButtonClick(object Sender, RoutedEventArgs e)
         //{
         //    var recipient = recipientsList.SelectedItem as Recipient;
@@ -48,6 +49,8 @@ namespace MailSender
         //        mailSender.Send(mailTopic.Text, mailText.Text, "rimedheart@yandex.ru", "rimedheart@yandex.ru");
         //    }            
         //}
+
+       
 
         private void editSend_Checked(object sender, RoutedEventArgs e)
         {

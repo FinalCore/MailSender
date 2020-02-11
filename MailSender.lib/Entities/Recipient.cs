@@ -12,9 +12,11 @@ namespace MailSender.lib.Entities
 
         public Recipient(int id, string name, string address)
         {
+ MVVM_pattern_self-studying
             ID = id;
             Name = name;
             Address = address;
+
         }
 
         public override string ToString()

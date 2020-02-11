@@ -13,8 +13,10 @@
             <TextBlock>Фильтр</TextBlock>
             <TextBox></TextBox>
         </DockPanel>
+ MVVM_pattern_self-studying
         <Button Content="Обновить" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="15" Margin="20, 7" Command="{Binding LoadRecipientsDataCommand}"></Button>
         <DataGrid x:Name="RecipientsList" ItemsSource="{Binding Recipients}" AutoGenerateColumns="False"
+
                   SelectedItem="{Binding SelectedRecipient}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding ID}"></DataGridTextColumn>

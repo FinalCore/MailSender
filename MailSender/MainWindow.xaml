@@ -7,10 +7,13 @@
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:view="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:view="clr-namespace:MailSender.Views"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
+ MVVM_pattern_self-studying
     
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -78,11 +81,13 @@
                     <GroupBox Header="Получатели писем" DockPanel.Dock="Top">
                         <Grid>
                             <Grid.ColumnDefinitions>
+MVVM_pattern_self-studying
                                 <ColumnDefinition Width="5*"></ColumnDefinition>
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <view:RecipientsView Grid.Column="0"/>
                             <view:RecipientEditor Grid.Column="1" Margin="5,0,0,135"/>
+
                         </Grid>
                     </GroupBox>
                 </DockPanel>

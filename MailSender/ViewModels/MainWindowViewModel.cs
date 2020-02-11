@@ -1,4 +1,5 @@
 ﻿using System;
+ MVVM_pattern_self-studying
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Text;
@@ -11,10 +12,12 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
 using MailSender.lib.Services.Interfaces;
 
+
 namespace MailSender.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+ MVVM_pattern_self-studying
        
         //Тест работы модели представления на примере названия окна
 
@@ -78,5 +81,6 @@ namespace MailSender.ViewModels
             recipientsManager.Edit(recipient);
             recipientsManager.SaveChanges();
         }
+
     }
 }

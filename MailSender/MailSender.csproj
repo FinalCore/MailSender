@@ -32,4 +32,8 @@
     <Resource Include="Images\Edit_color.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
