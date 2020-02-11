@@ -8,7 +8,7 @@ namespace MailSender.lib.MVVM
 {
     public abstract class ViewModel : INotifyPropertyChanged
     {
-        // Объявляем событие
+        // Объявляем событие, наступающее при изменении какого-либо свойства объекта "sender"
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

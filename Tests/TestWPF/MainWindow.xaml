@@ -6,10 +6,18 @@
         xmlns:local="clr-namespace:TestWPF"
         xmlns:vm="clr-namespace:TestWPF.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding Title2}" Height="450" Width="800">
+        Title="{Binding RotationAngle}" Height="450" Width="800">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-        <DockPanel>    
-        </DockPanel>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="{Binding Title}"></TextBlock>
+        <TextBox DockPanel.Dock="Top" Text="{Binding RotationAngle, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox DockPanel.Dock="Top" Text="{Binding Title}"></TextBox>
+        <Ellipse Height="128" Width="452" Fill="Blue" Stroke="Red" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>                
+                <RotateTransform Angle="{Binding RotationAngle}" ></RotateTransform>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+    </DockPanel>
 </Window>
