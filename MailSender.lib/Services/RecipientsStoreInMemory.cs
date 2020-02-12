@@ -10,7 +10,7 @@ namespace MailSender.lib.Services
     //Класс, определяющий место хранения данных для класса RecipientManager
    public class RecipientsStoreInMemory : IRecipientsStore
     {
-        public IEnumerable<Recipient> Get() => TestData.Recepients;
+        public IEnumerable<Recipient> GetAll() => TestData.Recepients;
         public void Add(Recipient newRecipient) { }
 
         public void Edit(Recipient recepient) { }

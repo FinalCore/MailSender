@@ -7,12 +7,15 @@ namespace MailSender.lib.Services.Interfaces
 {
     public interface IRecipientsStore
     {
-        IEnumerable<Recipient> Get();
+        IEnumerable<Recipient> GetAll();
 
-        // Методы для манипуляирования получателями (CRUD)
-        void Add(Recipient newRecipient);
+        Recipient GetById(int id); 
 
-        void Edit(Recipient recepient);
+        void Create(Recipient newRecipient);
+
+        void Edit(int id, Recipient recepient);
+
+        Recipient Remove(int id);
 
         void SaveChanges();
     }

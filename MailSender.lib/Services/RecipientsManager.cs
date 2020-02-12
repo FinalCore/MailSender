@@ -22,7 +22,7 @@ namespace MailSender.lib.Services
         /// <returns></returns>
         public IEnumerable<Recipient> GetAll()
         {
-            return recipientsStore.Get();
+            return recipientsStore.GetAll();
         }
 
         // Методы для манипуляирования получателями (CRUD)
