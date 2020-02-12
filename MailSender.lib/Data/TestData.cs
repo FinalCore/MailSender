@@ -20,11 +20,8 @@ namespace MailSender.lib.Data
             new Sender(1, "Петросян", "e.petrosyan@gamil.com"),
             new Sender(2, "Хабибулин", "a.habibulin@yandex.ru")
         };
-        
-MVVM_pattern_self-studying
-        public static List<Recipient> Recepients { get; } = new List<Recipient>
 
-master
+        public static List<Recipient> Recepients { get; } = new List<Recipient>
         {
             new Recipient(0, "Васильев", "ee-vasya@mail.ru"),
             new Recipient(1, "Смирнов", "smirnoff@gamil.com"),
@@ -32,3 +29,4 @@ master
         };
     }
 }
+

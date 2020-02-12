@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using MailSender.lib.Entities;
- MVVM_pattern_self-studying
 using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
@@ -28,32 +27,10 @@ namespace MailSender.lib.Services
 
         // Методы для манипуляирования получателями (CRUD)
 
+        public void Add(Recipient newRecipient) { }
 
-namespace MailSender.lib.Services
-{
-    public class RecipientsManager
-    {
-        private RecipientStoreInMemory store;
-        public RecipientsManager(RecipientStoreInMemory store)
-        {
-            this.store = store;
-        }
-
-        public IEnumerable<Recipient> GetAll()
-        {
-            return store.Get();
-        }
-            
-
- MVVM_pattern_self-studying
-
-        public void Edit(Recipient recepient)
-        {
-
-        }
+        public void Edit(Recipient recepient) { }
 
         public void SaveChanges() { }
-
-
     }
 }
