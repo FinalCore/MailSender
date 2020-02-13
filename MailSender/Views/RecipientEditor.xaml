@@ -7,6 +7,14 @@
              mc:Ignorable="d" d:DesignWidth="347.014" Height="136"
               DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
     <Grid VerticalAlignment="Center">
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="8,2,8,2"></Setter>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="3,0,3,0"></Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
