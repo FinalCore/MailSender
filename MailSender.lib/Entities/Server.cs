@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Entities
 {
     /// <summary>
     /// Класс, описывающий сервер 
     /// </summary>
-    public class Server
+    public class Server : NamedEntity
     {
         public int ID { get; set; }
         public string Name { get; set; }
