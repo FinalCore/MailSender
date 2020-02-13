@@ -9,7 +9,7 @@ using MailSender.lib.Services.Interfaces;
 namespace MailSender.lib.Services
 {
     //Класс, определяющий место хранения данных для класса RecipientManager
-   public class RecipientsStoreInMemory : IRecipientsStore
+   public class RecipientsStoreInMemory : IRecipientStore
     {
         public IEnumerable<Recipient> GetAll() => TestData.Recepients;
 

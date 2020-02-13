@@ -9,9 +9,9 @@ namespace MailSender.lib.Services
     //Класс, отвечающий за обработку данных, касающихся получателей писем
    public class RecipientsManager : IRecipientsManager
     {
-        private IRecipientsStore recipientsStore;
+        private IRecipientsManager recipientsStore;
         //Конcтруктор, с указанием места хранения данных для класса RecipientManager
-        public RecipientsManager(IRecipientsStore recipientsStore)
+        public RecipientsManager(IRecipientsManager recipientsStore)
         {
             this.recipientsStore = recipientsStore;
         }
