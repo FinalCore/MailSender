@@ -11,7 +11,7 @@ namespace MailSender.lib.Services.Interfaces
 
         Recipient GetById(int id); 
 
-        void Create(Recipient newRecipient);
+        int Create(Recipient newRecipient);
 
         void Edit(int id, Recipient recepient);
 
