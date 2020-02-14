@@ -2,14 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 using MailSender.lib.Entities.Base;
+using System.ComponentModel;
 
 namespace MailSender.lib.Entities
 {
-    public class Recipient : NamedEntity
+    public class Recipient : PersonEntity/*, IDataErrorInfo*/
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public override string Name 
+        {
+            get => base.Name;
+            set
+            {
+
+            }
+        }
+
+        //public string Error => null;
+
+        //public string this[string PropertyName]
+        //{
+        //    get 
+        //    {
+
+        //    }     
+        //}
+        
 
         public Recipient(int id, string name, string address)
         {

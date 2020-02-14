@@ -22,5 +22,10 @@ namespace MailSender.Views
         {
             InitializeComponent();
         }
+
+        private void OnValidationError (object sender, ValidationErrorEventArgs e)
+        {
+            //if (e.Source )
+        }
     }
 }

@@ -10,8 +10,6 @@ namespace MailSender.lib.Entities
     /// </summary>
     public class Server : NamedEntity
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
         public string Address { get; set; }
         public int Port { get; set; }
         public bool UseSSL { get; set; } = true;

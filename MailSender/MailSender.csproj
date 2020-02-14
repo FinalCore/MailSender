@@ -39,4 +39,8 @@
     <Resource Include="Images\Edit_color.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Infrastructure\ValidationRules\" />
+  </ItemGroup>
+
 </Project>
