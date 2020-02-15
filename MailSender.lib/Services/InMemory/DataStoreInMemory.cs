@@ -17,6 +17,7 @@ namespace MailSender.lib.Services.InMemory
      
         public int Create(T newT)
         {
+            if (newT is null) throw new ArgumentNullException(nameof(newT));
             if (items.Contains(newT)) return newT.ID;
             else newT.ID = items.Count == 0 ? 1 : items.Max(r => r.ID) + 1;
             items.Add(newT);
@@ -28,7 +29,7 @@ namespace MailSender.lib.Services.InMemory
         /// </summary>
         /// <param name="id"></param>
         /// <param name="item"></param>
-        public abstract void Edit(int id, T item);
+        public abstract void Edit(int id, T item);  
         
 
         public IEnumerable<T> GetAll() => items;
