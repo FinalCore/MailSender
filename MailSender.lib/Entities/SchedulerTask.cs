@@ -15,5 +15,14 @@ namespace MailSender.lib.Entities
         public MailingList Recipient { get; set; }
         public Server Server { get; set; }
         public Mail Mail { get; set; }
+
+        public SchedulerTask(int id, DateTime time, Sender sender, MailingList recipient, Server server, Mail mail) : base(id)
+        {
+            Time = time;
+            Sender = sender;
+            Recipient = recipient;
+            Server = server;
+            Mail = mail;
+        }
     }
 }

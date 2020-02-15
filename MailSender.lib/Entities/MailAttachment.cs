@@ -7,5 +7,9 @@ namespace MailSender.lib.Entities
 {
     public class MailAttachment : BaseEntity
     {
+        public MailAttachment(int id) : base(id)
+        {
+            
+        }
     }
 }

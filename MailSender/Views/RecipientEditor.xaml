@@ -35,7 +35,12 @@
             <TextBox.Text>
                 <Binding Path="SelectedRecipient.Address" NotifyOnValidationError="True">
                     <Binding.ValidationRules>
-                        <validation:RegExValidationRules Pattern="\w+@\w+\.\w+" ErrorMessage="Электронная почта введена некорректно "></validation:RegExValidationRules>
+                        <validation:RegExValidationRules Pattern="\w+@\w+\.\w+" 
+                                                         ErrorMessage="Электронная почта введена некорректно ">                      
+                        </validation:RegExValidationRules>
+                        <ExceptionValidationRule/>
+                        <DataErrorValidationRule/>
+                        <NotifyDataErrorValidationRule/>
                     </Binding.ValidationRules>
                 </Binding> 
             </TextBox.Text>

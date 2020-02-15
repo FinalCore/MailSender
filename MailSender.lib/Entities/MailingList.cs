@@ -9,5 +9,10 @@ namespace MailSender.lib.Entities
     {
         public ICollection<Recipient> Recipient { get; set; } = new List<Recipient>();
 
+        public MailingList(int id, string name) : base(id, name)
+        {
+
+        }
+
     }
 }

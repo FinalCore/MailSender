@@ -10,11 +10,8 @@ namespace MailSender.lib.Entities
     /// </summary>
     public class Sender : PersonEntity
     {
-       public Sender(int id, string name, string address)
+        public Sender(int id, string name, string address) : base(id, name, address)
         {
-            ID = id;
-            Name = name;
-            Address = address;
         }
 
         public override string ToString()
