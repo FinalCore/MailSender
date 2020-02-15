@@ -6,19 +6,9 @@
              mc:Ignorable="d"
              xmlns:vm="clr-namespace:MailSender.ViewModels"
              xmlns:local="clr-namespace:MailSender"
-             StartupUri="MainWindow.xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             xmlns:vm="clr-namespace:MailSender.ViewModels">
-     
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
     </Application.Resources>
- MVVM_pattern_self-studying
 </Application>
 
-
-    
- master

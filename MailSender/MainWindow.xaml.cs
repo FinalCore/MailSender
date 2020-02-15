@@ -27,7 +27,7 @@ namespace MailSender
             InitializeComponent();
         }
 
- MVVM_pattern_self-studying
+
         //private void OnSendButtonClick(object Sender, RoutedEventArgs e)
         //{
         //    var recipient = recipientsList.SelectedItem as Recipient;

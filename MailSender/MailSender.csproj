@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+    <Page Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\Add_color.png" />
     <None Remove="Images\Attach.png" />
     <None Remove="Images\Calendar_color.png" />
@@ -30,10 +37,6 @@
     <Resource Include="Images\Calendar_color.png" />
     <Resource Include="Images\Delete_color.png" />
     <Resource Include="Images\Edit_color.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

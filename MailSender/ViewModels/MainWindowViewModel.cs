@@ -1,5 +1,4 @@
 ﻿using System;
- MVVM_pattern_self-studying
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Text;
@@ -17,8 +16,7 @@ namespace MailSender.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
- MVVM_pattern_self-studying
-       
+      
         //Тест работы модели представления на примере названия окна
 
         private string title = "Приложение для рассылки почты";
