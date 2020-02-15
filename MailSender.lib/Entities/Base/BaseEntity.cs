@@ -8,6 +8,7 @@ namespace MailSender.lib.Entities.Base
     {
         public int ID { get; set; }
 
+        public BaseEntity() { }
         public BaseEntity(int id)
         {
             ID = id;

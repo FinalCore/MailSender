@@ -20,5 +20,5 @@ namespace MailSender.lib.Services.InMemory
             db_recipient.Name = recipient.Name;
             db_recipient.Address = recipient.Address;
         }              
-    }
+    }  
 }

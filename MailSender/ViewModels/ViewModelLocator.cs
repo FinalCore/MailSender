@@ -21,7 +21,9 @@ namespace MailSender.ViewModels
             SimpleIoc.Default.Register<MainWindowViewModel>();
             //Отедельные классы бизнес-логики регистрируются через интерфейсы. Например, 
             SimpleIoc.Default.Register<IRecipientsManager, RecipientsManager>();
-            SimpleIoc.Default.Register<IRecipientsStore, RecipientsStoreInMemory>();
+            SimpleIoc.Default.Register<ISendersStore, SendersStoreInMemory>();
+            SimpleIoc.Default.Register<IServersStore, ServersStoreInMemory>();
+            SimpleIoc.Default.Register<IMailsStore, MailsStoreInMemory>();
         }
 
         // Свойство, генерирующее одну из зарегистрированных моделей представления (в данном случае MainWindowViewModel)
