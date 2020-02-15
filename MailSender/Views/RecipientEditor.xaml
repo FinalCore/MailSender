@@ -11,6 +11,23 @@
         <Grid.Resources>
             <Style TargetType="TextBox">
                 <Setter Property="Margin" Value="8,2,8,2"></Setter>
+                <Setter Property="Validation.ErrorTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <DockPanel>
+                                <TextBlock Text="!" DockPanel.Dock="Right"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Foreground="Red"
+                                           ToolTip="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=ErrorVisualElement}">                                    
+                                </TextBlock>
+                                <Border Padding="2" BorderBrush="Red" BorderThickness="3">
+                                    <AdornedElementPlaceholder Name="ErrorVisualElement"></AdornedElementPlaceholder>
+                                </Border>
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
             <Style TargetType="TextBlock">
                 <Setter Property="Margin" Value="3,0,3,0"></Setter>
